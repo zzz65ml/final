@@ -33,6 +33,7 @@ jobs:
           username: ${{ secrets.HOST_USER_NAME }}  # 服务器用户名（如ubuntu）
           key: ${{ secrets.HOST_SSH_PRIVATE_KEY }} # SSH私钥
           port: 22
+          debug: ture
           script: |
             cd /home/ubuntu/website
             docker compose down
