@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  # 个人网站服务
+  personal-website:
+    image: 20232089/northminzu-personal-site:latest
+    ports:
+      - "8080:80"        # 映射到服务器8080端口
+    restart: always
+
+  # Todo应用服务
+  todo-app:
+    build: ./todo-app/examples/vanilla  # 基于Todo应用目录构建
+    ports:
+      - "3000:3000"      # 映射到服务器3000端口
+    restart: always
