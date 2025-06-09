@@ -1,11 +1,11 @@
-# 使用Nginx作为基础镜像
-FROM nginx:1.23-alpine
+# 使用nginx作为基础镜像
+FROM nginx:alpine
 
-# 复制个人网站文件到Nginx默认目录
-COPY index.html /usr/share/nginx/html/
-COPY your-image.jpg /usr/share/nginx/html/
+# 将当前目录下的文件复制到nginx的默认网站目录
+COPY . /usr/share/nginx/html
 
 # 暴露80端口
 EXPOSE 80
 
-
+# 启动nginx服务
+CMD ["nginx", "-g", "daemon off;"]
